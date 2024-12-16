@@ -1,0 +1,7 @@
+type Result = variant { Ok : null; Err : text };
+
+service : {
+  "send_tokens": (text, nat) -> (Result) query;
+  "receive_tokens": (text, nat) -> ();
+  "get_balance": () -> (nat) query;
+}

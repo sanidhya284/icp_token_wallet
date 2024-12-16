@@ -1,0 +1,18 @@
+[package]
+name = "icp_token_wallet"
+version = "0.1.0"
+edition = "2018"
+
+[lib]
+path = "src/lib.rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+candid = "0.8.4"
+ic-cdk = "0.8.1"
+ic-cdk-macros = "0.8.1"
+serde = { version = "1.0.130", features = ["derive"] }
+
+[dev-dependencies]
+ic-cdk-test = "0.8.1"
+tokio = { version = "1.0", features = ["full"] }

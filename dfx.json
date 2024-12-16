@@ -1,30 +1,12 @@
 {
   "canisters": {
     "icp_token_wallet": {
-      "main": "src/icp_token_wallet/main.mo",
-      "type": "motoko"
-    },
-    "icp_token_wallet_assets": {
-      "dependencies": [
-        "icp_token_wallet"
-      ],
-      "frontend": {
-        "entrypoint": "src/icp_token_wallet_assets/src/index.html"
-      },
-      "source": [
-        "src/icp_token_wallet_assets/assets",
-        "dist/icp_token_wallet_assets/"
-      ],
-      "type": "assets"
+      "package": "icp_token_wallet",
+      "type": "rust",
+      "candid": "src/icp_token_wallet.did",
+      "build": "cargo build --target wasm32-unknown-unknown --release"
     }
   },
-  "defaults": {
-    "build": {
-      "args": "",
-      "packtool": ""
-    }
-  },
-  "dfx": "0.8.4",
   "networks": {
     "local": {
       "bind": "127.0.0.1:8000",
